@@ -60,6 +60,7 @@ var misFunciones = {saludar: function() {  //La propiedad "saludar" es igual a u
 misFunciones.saludar() //Para leerlo accedemos a la propiedad y la ejecutamos.
 
 
+
 /*Dot-Notation y Bracket-Notation.*/
 
 /*De la misma manera que utilizamos la Dot-Notation o notación por puntos para acceder o 
@@ -79,9 +80,72 @@ console.log(atuendos);
 
 //Ejemplo del video con la diferencia entre DOT y BRACKET
 var comidas = {};
-var diferenciaDeNotaciones = function (propUno, propDos) {
+var diferenciaDeNotaciones = function (propUno, propDos) {//Varible interna al objeto.
     comidas.propUno = ['Frutas', 'Verduras'];
     comidas[propDos] = ['Hamburguesas', 'Papas Fritas'];
 }
-diferenciaDeNotaciones('saludable', 'no saludable');
-console.log(comidas);
+diferenciaDeNotaciones('saludable', 'no saludable');//Variable externa con los nuevos nombres de las propiedades.
+console.log(comidas);                               //En uno funciona y en otro no.
+
+
+//Si se fijan, la primera propiedad sigue llamandose 'propUno'(Dot-Notation), pero la segunda propiedad paso a
+// llamarse 'no saludable'(Bracket Notation). Eso es por que agregamos el nombre desde una variable externa.
+//Muchas veces nos puede suceder que necesitamos una variable externa para guardarlas como propiedad en un
+//objeto, es importante que en esos casos ultilicemos el Bracket Notation sin comillas
+
+
+/*Objetos Avanzado*/
+/*Métodos de objetos*/
+
+
+/*El método hasOwnProperty() nos permitirá especificar un nombre, y 
+verificar si este existe como una propiedad dentro de un objeto. En cada caso devolverá true o false.*/
+
+// HAS OWN PROPERTY
+var libro = { autor: 'Borges', genero: 'Policial', año: 1990 };
+var tienePropiedad = libro.hasOwnProperty('nombre');
+
+console.log(tienePropiedad);
+
+
+/*El método Object.keys() devuelve todas las propiedades de un objeto guardadas en orden dentro de un arreglo.*/
+
+// KEYS
+var libro = { autor: 'Borges', genero: 'Policial', año: 1990 };
+var todasLasPropiedades = Object.keys(libro);
+
+console.log(todasLasPropiedades);
+
+
+/*Recorridos en objetos
+
+De la misma manera que podíamos recorrer los elementos de un arreglo, podemos recorrer las propiedades
+ de un objeto junto con sus valores.
+
+El bucle For-In nos permite iterar sobre un objeto utilizando dos variables pivot. Una representa 
+el objeto que recorremos, y la otra la propiedad en la que se está realizando la iteración. Utilizando 
+ambos valores podremos acceder al valor de cada propiedad del objeto.*/
+
+var mundo = {continentes: '7', paises: '195', oceanos: '5'};
+for (let prop in mundo) {
+    console.log('Esta es la propiedad: ', prop);
+    console.log('Este es el valor: ', mundo[prop]);
+ }
+
+
+ /*Contextos en JavaScript
+
+Dentro de este lenguaje de programación existe un objeto global llamado this. Este nos permite
+ manipular el contexto en el que las funciones y la información está siendo ejecutada. De esta 
+ forma podremos tener un alcance más preciso dentro de nuestro código.*/
+
+ //THIS
+var mascota = {
+    animal: 'Perro',
+    raza: 'Ovejero Alemán',
+    amistoso: true,
+    dueño: 'María López',
+    info: () => {
+       console.log('Mi perro es un  ' + this.raza);
+    },
+ };
