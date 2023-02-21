@@ -127,12 +127,23 @@ el objeto que recorremos, y la otra la propiedad en la que se está realizando l
 ambos valores podremos acceder al valor de cada propiedad del objeto.*/
 
 var mundo = {continentes: '7', paises: '195', oceanos: '5'};
-for (let prop in mundo) {
-    console.log('Esta es la propiedad: ', prop);
-    console.log('Este es el valor: ', mundo[prop]);
+for (let prop in mundo) {//let prop es la variable de iteracion. Luego la palabra reservada 'in' seguida del objeto que queremos recorer, en este caso 'mundo'.
+    console.log('Esta es la propiedad: ', prop); /*por cada iteracion le decimos al bucle que haga un 
+    console log de 'esta es la propiedad' + prop(variable de la propiedad)*/
+    console.log('Este es el valor: ', mundo[prop]);/* luego que haga consolo.log de 'Este es el valor' + 
+    mundo[prop].(nombre del objeto e ingreso dentro para saber el valor con el 
+        bracket notation mundo[prop(variable de la propiedad)])*/
  }
 
+ //Mas detallado el bucle
+ // console.log('Esta es la propiedad: ', prop); por cada iteracion aca me devuelve la variable 'prop' 
+ //que representa en este caso el nombre de una propiedad.
+ 
+ //console.log('Este es el valor: ', mundo[prop]); y aca ultilizando breakect notation puedo acceder 
+ //al valor de la propiedad 'mundo'
 
+
+ 
  /*Contextos en JavaScript
 
 Dentro de este lenguaje de programación existe un objeto global llamado this. Este nos permite
