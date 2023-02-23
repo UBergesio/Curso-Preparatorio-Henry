@@ -3,7 +3,7 @@ otras clases. De esta forma, podremos generar distintas sub-entidades que puedan
  características, pero que compartan algunas otras generales.*/
 
 
- //Cramos una clase para mostrar despues como funcionan las extenciones.
+ //Cramos una clase para mostrar despues ver como funcionan las extenciones.
 
 class Persona {
     constructor(nombre, edad) {
